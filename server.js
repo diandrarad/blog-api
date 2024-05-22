@@ -12,7 +12,7 @@ const app = express()
 const PORT = process.env.PORT || 3000
 
 const corsOptions = {
-    origin: 'https://diandrarad-bookish-space-fishstick-94rgp9qjgwv377vr-3001.app.github.dev',
+    origin: 'https://diandrarad-bookish-space-fishstick-94rgp9qjgwv377vr-3000.app.github.dev',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }
