@@ -5,6 +5,16 @@ exports.getPosts = async (req, res) => {
   res.json(posts)
 }
 
+// Fetch all posts (both published and unpublished)
+exports.getAllPosts = async (req, res) => {
+  try {
+    const posts = await Post.find().populate('author', 'username')
+    res.json(posts);
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
+
 exports.getPostById = async (req, res) => {
   const post = await Post.findById(req.params.id).populate('author', 'username')
   if (post && post.published) {
